@@ -10,12 +10,9 @@ jobs:
         with:
           haxe-version: 4.1.5
       - run: |
-          # haxelib install hxnodejs
           haxelib install lime 7.9.0 --skip-dependencies --quiet
           haxelib install openfl 9.2.0 --skip-dependencies --quiet
           haxelib install flixel 4.11.0 --skip-dependencies --quiet
-          haxelib run lime setup --quiet
-          haxelib run lime setup flixel --quiet
           haxelib install flixel-tools 1.5.1 --skip-dependencies --quiet
           haxelib run flixel-tools setup --quiet
           haxelib install flixel-addons 2.11.0 --skip-dependencies --quiet
@@ -27,7 +24,7 @@ jobs:
           haxelib git polymod https://github.com/larsiusprime/polymod.git --quiet
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --skip-dependencies --quiet
           haxelib list
-          lime build windows
+          haxelib run lime build windows
       - uses: actions/upload-artifact@v4
         with:
           name: Windows Build
