@@ -17,9 +17,9 @@ jobs:
           haxelib run flixel-tools setup --quiet
           haxelib install flixel-addons 2.11.0 --skip-dependencies --quiet
           haxelib install flixel-ui 2.5.0 --skip-dependencies --quiet
+          haxelib run lime setup flixel --quiet
           haxelib install hscript 2.5.0 --skip-dependencies --quiet
           haxelib install newgrounds 1.1.4 --skip-dependencies --quiet
-          haxelib install hxCodec 2.5.1 --quiet
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git --quiet
           haxelib git faxe https://github.com/uhrobots/faxe --quiet
           haxelib git polymod https://github.com/larsiusprime/polymod.git --quiet
@@ -30,3 +30,4 @@ jobs:
         with:
           name: Windows Build
           path: export/release/windows/bin
+
