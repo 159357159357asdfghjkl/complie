@@ -26,6 +26,9 @@ jobs:
           haxelib git faxe https://github.com/uhrobots/faxe --quiet
           haxelib git polymod https://github.com/larsiusprime/polymod.git --quiet
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --quiet
+      - name: Rebuild
+        run: |
+          haxelib run lime rebuild extension-webm
       - name: Build
         run: |
           haxelib run lime build windows
