@@ -28,7 +28,7 @@ jobs:
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --quiet
       - name: Rebuild
         run: |
-          haxelib run lime rebuild extension-webm
+          haxelib run lime rebuild extension-webm windows
       - name: Build
         run: |
           haxelib run lime build windows
