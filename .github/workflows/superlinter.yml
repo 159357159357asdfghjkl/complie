@@ -21,7 +21,7 @@ jobs:
           haxelib install hscript 2.5.0 --skip-dependencies --quiet
           haxelib install newgrounds 1.1.4 --skip-dependencies --quiet
           haxelib install actuate
-          haxelib install extension-webm
+          haxelib git extension-webm https://github.com/KadeDev/extension-webm
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git --quiet
           haxelib git faxe https://github.com/uhrobots/faxe --quiet
           haxelib git polymod https://github.com/larsiusprime/polymod.git --quiet
