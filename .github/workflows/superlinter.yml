@@ -26,6 +26,7 @@ jobs:
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --quiet
           haxelib list
           haxelib run lime build windows
+          
       - uses: actions/upload-artifact@v4
         with:
           name: Windows Build
