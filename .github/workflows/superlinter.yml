@@ -33,7 +33,7 @@ jobs:
           haxelib git polymod https://github.com/larsiusprime/polymod.git
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --skip-dependencies
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Windows Build
           path: export/release/windows/bin
