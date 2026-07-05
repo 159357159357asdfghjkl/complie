@@ -10,22 +10,22 @@ jobs:
         with:
           haxe-version: 4.1.5
       - run: |
-          haxelib install hxnodejs
-          haxelib install lime 7.9.0 --skip-dependencies
-          haxelib install openfl 9.2.0 --skip-dependencies
-          haxelib install flixel 4.11.0 --skip-dependencies
-          haxelib run lime setup
-          haxelib run lime setup flixel
-          haxelib install flixel-tools 1.5.1 --skip-dependencies
-          haxelib run flixel-tools setup
-          haxelib install flixel-addons 2.11.0 --skip-dependencies
-          haxelib install flixel-ui 2.5.0 --skip-dependencies
-          haxelib install hscript 2.5.0 --skip-dependencies
-          haxelib install newgrounds 1.1.4 --skip-dependencies
-          haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git
-          haxelib git faxe https://github.com/uhrobots/faxe
-          haxelib git polymod https://github.com/larsiusprime/polymod.git
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --skip-dependencies
+          # haxelib install hxnodejs
+          haxelib install lime 7.9.0 --skip-dependencies --quiet
+          haxelib install openfl 9.2.0 --skip-dependencies --quiet
+          haxelib install flixel 4.11.0 --skip-dependencies --quiet
+          haxelib run lime setup --quiet
+          haxelib run lime setup flixel --quiet
+          haxelib install flixel-tools 1.5.1 --skip-dependencies --quiet
+          haxelib run flixel-tools setup --quiet
+          haxelib install flixel-addons 2.11.0 --skip-dependencies --quiet
+          haxelib install flixel-ui 2.5.0 --skip-dependencies --quiet
+          haxelib install hscript 2.5.0 --skip-dependencies --quiet
+          haxelib install newgrounds 1.1.4 --skip-dependencies --quiet
+          haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git --quiet
+          haxelib git faxe https://github.com/uhrobots/faxe --quiet
+          haxelib git polymod https://github.com/larsiusprime/polymod.git --quiet
+          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --skip-dependencies --quiet
           haxelib list
           lime build windows
       - uses: actions/upload-artifact@v4
