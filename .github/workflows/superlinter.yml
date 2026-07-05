@@ -19,10 +19,11 @@ jobs:
           haxelib install flixel-ui 2.5.0 --skip-dependencies --quiet
           haxelib install hscript 2.5.0 --skip-dependencies --quiet
           haxelib install newgrounds 1.1.4 --skip-dependencies --quiet
+          haxelib install hxCodec 2.5.1 --quiet
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git --quiet
           haxelib git faxe https://github.com/uhrobots/faxe --quiet
           haxelib git polymod https://github.com/larsiusprime/polymod.git --quiet
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --skip-dependencies --quiet
+          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --quiet
           haxelib list
           haxelib run lime build windows
       - uses: actions/upload-artifact@v4
