@@ -9,7 +9,8 @@ jobs:
       - uses: krdlab/setup-haxe@v1
         with:
           haxe-version: 4.1.5
-      - run: |
+      - name: Download Haxelib
+        run: |
           haxelib install lime 7.9.0 --skip-dependencies --quiet
           haxelib install openfl 9.2.0 --skip-dependencies --quiet
           haxelib install flixel 4.11.0 --skip-dependencies --quiet
@@ -24,6 +25,8 @@ jobs:
           haxelib git faxe https://github.com/uhrobots/faxe --quiet
           haxelib git polymod https://github.com/larsiusprime/polymod.git --quiet
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --quiet
+      - name: Build
+        run: |
           haxelib list
           haxelib run lime build windows
           
