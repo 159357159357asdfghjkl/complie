@@ -36,5 +36,14 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Windows Build
-          path: export/release/windows/bin
+          path: export/release/windows/bin+
+          
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          files: ./Bob-and-Bosip.zip
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          
 
