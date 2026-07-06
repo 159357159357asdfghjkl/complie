@@ -32,18 +32,23 @@ jobs:
       - name: Build
         run: |
           haxelib run lime build windows
-          
-      - uses: actions/upload-artifact@v4
+
+      - name: Build Zip
+        run: |
+          Compress-Archive `
+            -Path export/release/windows/bin/* `
+            -DestinationPath export/release/windows/bin/windowsBuild.zip `
+            -Force
+        shell: pwsh
+        
+      - name: Publish The Release
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          name: Windows Build
-          path: export/release/windows/bin+
-          
-      - name: Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v1.0.0
-          files: ./Bob-and-Bosip.zip
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: true
+          automatic_release_tag: "v1.0.0"
+          title: "Bob and Bosip: the EX Update (File Archive)"
+          files: |
+            export/release/windows/bin/windowsBuild.zip
           
 
