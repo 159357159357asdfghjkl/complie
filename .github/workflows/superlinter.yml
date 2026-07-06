@@ -4,6 +4,7 @@ on: [push,pull_request,check_run]
 jobs:
   build:
     runs-on: windows-latest
+    permissions: write-all
     steps:
       - uses: actions/checkout@v2
       - uses: krdlab/setup-haxe@v1
